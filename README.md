@@ -9,7 +9,7 @@ Deep-frame-interpolation-localization
 # Usage
 
 # Required Data
-
+    + First,prepare the database [UCF&Danvis]
     + First,prepare the database [UCF&Danvis]
 
     + Second,use PWC-Net to generate optical flow 
