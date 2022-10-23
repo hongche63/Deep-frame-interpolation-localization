@@ -10,6 +10,8 @@ Deep-frame-interpolation-localization
 # Required Data
 
 .First,prepare the database (UCF&Danvis)
+
 .Second,use PWC-Net to generate optical flow
+
 .Third,use ConvGRU-Z to get predicted video frame .The predicted frame and the real frame are different to obtain the motion abnormity region.
 
