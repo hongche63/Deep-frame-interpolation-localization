@@ -13,7 +13,6 @@ Deep-frame-interpolation-localization
 
     .Second,use PWC-Net to generate optical flow 
     <https://research.nvidia.com/publication/2018-06_pwc-net-cnns-optical-flow-using-pyramid-warping-and-cost-volume>.
-    [https://blog.csdn.net/zyz00000000]
 
     .Third,use ConvGRU-Z to get predicted video frame .The predicted frame and the real frame are different to obtain the motion abnormity region.
 
