@@ -10,12 +10,12 @@ Deep-frame-interpolation-localization
 
 # Required Data
 
-    .First,prepare the database [UCF&Danvis]
+    +First,prepare the database [UCF&Danvis]
 
-    .Second,use PWC-Net to generate optical flow 
+    +Second,use PWC-Net to generate optical flow 
     [PWC-Net:](https://research.nvidia.com/publication/2018-06_pwc-net-cnns-optical-flow-using-pyramid-warping-and-cost-volume).
     <http://www.gnu.org/licenses/>
-    .Third,use ConvGRU-Z to get predicted video frame. The predicted frame and the real frame are different to obtain the motion abnormity region.
+    +Third,use ConvGRU-Z to get predicted video frame. The predicted frame and the real frame are different to obtain the motion abnormity region.
 
 # Train & Test
     . ConvGRU-Z:(Deep-frame -interpolation-localization/ConvGRU-Z/Train ConvGRU-Z)
