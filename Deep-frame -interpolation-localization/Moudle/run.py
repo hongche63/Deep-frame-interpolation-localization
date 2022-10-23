@@ -265,19 +265,4 @@ for i in range(k):
 
     print('test_loss: epoch{}:{}'.format(i, avg_testloss))
     print('test_accuracy: epoch{}:{}'.format(i, avg_testacc))
-    PFACC = n1 / (T)
-    FFACC = n2 / (F)
-    FACC = (n1 + n2) / len(data2)
-    Precision = n2 / (n2 + T- n1)
-    Recall = n2 / (n2+F-n2)
-    if Precision + Recall == 0:
-        F1score = 0
-    else:
-        F1score = 2 * Precision * Recall / (Precision + Recall)
-    print('n1,n2:', n1, n2)
-    print('PFACC:', PFACC)
-    print('FFACC:', FFACC)
-    print('FACC:', FACC)
-    print('Precision:', Precision)
-    print('Recall:', Recall)
-    print('F1score:', F1score)
+   
