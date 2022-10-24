@@ -22,7 +22,7 @@ class DWConv(nn.Module):
             kernel_size=3,
             stride=1,
             padding=1,
-            groups=1
+            groups=in_ch
         )
         self.point_conv = nn.Conv2d(
             in_channels=in_ch,
