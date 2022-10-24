@@ -12,8 +12,30 @@ from timm.models.helpers import load_pretrained
 from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 from timm.models.resnet import resnet26d, resnet50d
 from timm.models.registry import register_model
-
 _logger = logging.getLogger(__name__)
+class DWConv(nn.Module):
+    def __init__(self, in_ch, out_ch):
+        super(DWConv, self).__init__()
+        self.depth_conv = nn.Conv2d(
+            in_channels=in_ch,
+            out_channels=in_ch,
+            kernel_size=3,
+            stride=1,
+            padding=1,
+            groups=1
+        )
+        self.point_conv = nn.Conv2d(
+            in_channels=in_ch,
+            out_channels=out_ch,
+            kernel_size=1,
+            stride=1,
+            padding=0,
+            groups=1
+        )
+    def forward(self, input):
+        out = self.depth_conv(input)
+        out = self.point_conv(out)
+        return out
 
 
 def _cfg(url='', **kwargs):
@@ -212,7 +234,8 @@ class CMT(nn.Module):
             nn.BatchNorm2d(180, eps=1e-5),
         )
         self.conv2 = nn.Sequential(
-            nn.Conv2d(180, 180, 3, 1, 1, bias=True),
+            #nn.Conv2d(180, 180, 3, 1, 1, bias=True),
+            DWConv(180,180),
             nn.GELU(),
             nn.BatchNorm2d(180, eps=1e-5),
         )
