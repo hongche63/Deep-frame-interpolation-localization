@@ -17,7 +17,7 @@ Deep-frame-interpolation-localization
 + Third,use Z-shaped network to get predicted video frame. The predicted frame and the real frame are different to obtain the motion abnormity region.
 
 # Train & Test
-+ Z-shaped network:(Deep-frame -interpolation-localization/ConvGRU-Z/Train ConvGRU-Z)
++ Z-shaped network:(Deep-frame -interpolation-localization/Z-shaped network/Train Z-shaped network)
 + EMBN:(Deep-frame -interpolation-localization/Moudle/run)
 
 # Question
