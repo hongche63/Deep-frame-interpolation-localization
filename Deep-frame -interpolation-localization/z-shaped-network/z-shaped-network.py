@@ -184,7 +184,7 @@ class ED(nn.Module):
         batch_size,seq_number,input_channel, height, width = input.size()
         state_first = self.encoder(input)
         output_first = self.decoder(state_first)
-        first_image=(input[:, 0 :, :, :]).to(device)
+        first_image=(input[:, 0, :, :, :]).to(device).unsqueeze(1)
         temp_input = (input[:, 1:seq_number:1, :, :, :]).to(device)
         temp_output=(output_first[:,0:-1:1,:,:,:]).to(device)
         temp_n_1=(2*temp_input-temp_output).to(device)
